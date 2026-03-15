@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Place Mandi & Restaurant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:#111;
+position:fixed;
+width:100%;
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:600;
+color:#ff9800;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff9800;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.overlay h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.overlay p{
+color:#ddd;
+margin-bottom:25px;
+}
+
+/* BUTTONS */
+
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+background:#ff9800;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+background:#e65100;
+}
+
+/* SEARCH BAR */
+
+.search-container{
+margin-top:120px;
+text-align:center;
+}
+
+#searchInput{
+padding:12px 20px;
+width:60%;
+max-width:400px;
+border-radius:30px;
+border:none;
+outline:none;
+font-size:16px;
+background:#1c1c1c;
+color:white;
+}
+
+/* MENU */
+
+.menu{
+padding:90px 8%;
+}
+
+.menu h2{
+text-align:center;
+margin-bottom:40px;
+color:#ff9800;
+font-size:35px;
+}
+
+.category{
+margin-bottom:50px;
+}
+
+.category h3{
+margin-bottom:20px;
+color:#f1f1f1;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+/* MENU CARD */
+
+.card{
+background:#151515;
+border-radius:12px;
+overflow:hidden;
+transition:0.4s;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.8);
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.info{
+padding:15px;
+}
+
+.info h4{
+margin-bottom:5px;
+}
+
+.price{
+color:#ff9800;
+font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:25px;
+color:#aaa;
+}
+
+.location{
+text-align:center;
+margin-top:40px;
+color:#ccc;
+line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.overlay h1{
+font-size:32px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">OUR PLACE</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555992336-03a23c7b20ee')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')"></div>
+
+<div class="overlay">
+
+<h1>OUR PLACE MANDI & RESTAURANT</h1>
+<p>Authentic Mandi & Arabian Taste</p>
+
+<div class="btns">
+
+<a class="btn" href="tel:+918886222559">Call Now</a>
+
+<a class="btn" target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=OUR+PLACE+MANDI+%26+RESTAURANT+St+Peters+College+Road+Near+Vivekananda+Statue+Maisammaguda+Bhadurpalle+Hyderabad+Telangana+500100">
+View Location
+</a>
+
+<a class="btn" target="_blank"
+href="https://wa.me/918886222559?text=Hello%20I%20want%20to%20order%20food">
+Order on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="search-container">
+<input type="text" id="searchInput" placeholder="Search food like Mandi, Chicken...">
+</div>
+
+<section class="menu" id="menu">
+
+<h2>Restaurant Menu</h2>
+
+<div class="category">
+<h3>Veg Starters</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/ziQwte45e48/maxresdefault.jpg">
+<div class="info">
+<h4>Paneer Kurkure</h4>
+<p class="price">₹159</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://th.bing.com/th/id/R.2c183c3c8ae51afca86bf0ae17da46fa?rik=HFX9dYOc0QRjwA&riu=http%3a%2f%2fwww.blog.sagmart.com%2fwp-content%2fuploads%2f2015%2f10%2fdry-chilli-paneer1.jpg&ehk=xmzI4c9bIhxq8DW%2fYYOfoiD2LnB%2b7Q7Pkk11JDJZHf8%3d&risl=&pid=ImgRaw&r=0">
+<div class="info">
+<h4>Paneer Chilli</h4>
+<p class="price">₹159</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="category">
+<h3>Non Veg Starters</h3>
+
+<div class="grid">
+
+<div class="card"><img src="https://static.vecteezy.com/system/resources/previews/037/814/620/non_2x/ai-generated-crispy-fried-chicken-legs-with-mashed-potatoes-photo.jpg"><div class="info"><h4>Chicken Broasted</h4><p class="price">₹179</p></div></div>
+
+<div class="card"><img src="https://healthyrecipesblogs.com/wp-content/uploads/2020/09/baked-drumsticks-featured-2021.jpg"><div class="info"><h4>Chicken Drumstick</h4><p class="price">₹179</p></div></div>
+
+<div class="card"><img src="https://tse2.mm.bing.net/th/id/OIP.rCp1zJje_tFSFRrgPZFn1QHaD0?rs=1&pid=ImgDetMain&o=7&rm=3"><div class="info"><h4>Chicken Tikka</h4><p class="price">₹189</p></div></div>
+
+<div class="card"><img src="https://th.bing.com/th/id/R.ce9b4c8d250a1e52bf4fa596c2a7cabf?rik=u8FUGI%2fBuMmwXg&riu=http%3a%2f%2fyummykit.com%2fwp-content%2fuploads%2f2018%2f09%2fchicken-malai-tikka_edited-1024x820.jpg&ehk=Stcgw3YIKaW3Ox52jUlsb%2fCKS8PZSRu75djfMjVsOUs%3d&risl=&pid=ImgRaw&r=0"><div class="info"><h4>Malai Tikka</h4><p class="price">₹189</p></div></div>
+
+<div class="card"><img src="https://i.ytimg.com/vi/QVFg7o67DCI/maxresdefault.jpg"><div class="info"><h4>Fish Fry</h4><p class="price">₹199</p></div></div>
+
+<div class="card"><img src="https://www.recipesaresimple.com/wp-content/uploads/2017/11/fried-prawn-starter-kerala.jpg"><div class="info"><h4>Prawns Fry</h4><p class="price">₹199</p></div></div>
+
+</div>
+</div>
+
+<div class="category">
+<h3>Biryanis</h3>
+
+<div class="grid">
+
+<div class="card"><img src="https://www.cookwithkushi.com/wp-content/uploads/2015/11/spicy_Indian_chicken_biryani_recipe.jpg"><div class="info"><h4>Chicken Biryani</h4><p class="price">₹149</p></div></div>
+
+<div class="card"><img src="https://images.rawpixel.com/image_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI1LTA0L3Jhd3BpeGVsb2ZmaWNlN19yZWFsaXN0aWNfcGhvdG9fdG9wX3ZpZXdfb2ZfYV9wYWtpc3Rhbl9kcnVtc3RpY19iYjlmNmRjYi04MGEyLTQwMzMtYmQyMC00NTYyMDFkMDY5MmNfMS5qcGc.jpg"><div class="info"><h4>Drumstick Biryani</h4><p class="price">₹169</p></div></div>
+
+<div class="card"><img src="https://static.vecteezy.com/system/resources/previews/048/067/066/non_2x/biryani-dish-a-bowl-of-delicious-mutton-biryani-isolated-illustration-on-a-transparent-background-png.png"><div class="info"><h4>Mutton Biryani</h4><p class="price">₹249</p></div></div>
+
+</div>
+</div>
+<div class="category">
+
+<h3>Veg Mandi</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/JPJu26YHcyY/maxresdefault.jpg">
+<div class="info">
+<h4>Paneer Mandi</h4>
+
+<div class="price-box">
+<span>1pc <b>₹199</b></span>
+<span>2pc <b>₹349</b></span>
+<span>3pc <b>₹499</b></span>
+
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<img src="https://www.m3mandi.com/wp-content/uploads/2023/08/Crispy_paneer_Mandi_.jpeg">
+<div class="info">
+<h4>Paneer Kurkure Mandi</h4>
+
+<div class="price-box">
+<span>1pc <b>₹229</b></span>
+<span>2pc <b>₹389</b></span>
+<span>3pc <b>₹559</b></span>
+
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/w3ru_j-Y1Yo/hq720_2.jpg?sqp=-oaymwEkCJUDENAFSFryq4qpAxYIARUAAAAAJQAAyEI9AICiQ3gB0AEB&rs=AOn4CLD9KlXZXKw4iR51TwjWv5Pc4C60QQ">
+<div class="info">
+<h4>Mix Veg Mandi</h4>
+
+<div class="price-box">
+<span>1pc <b>₹199</b></span>
+<span>2pc <b>₹349</b></span>
+<span>3pc <b>₹499</b></span>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="category">
+
+<h3>Chicken Mandi</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.picxy.com/cache/2020/2/14/882e672f3ae08862880854b81d93a7a4.jpg">
+<div class="info">
+<h4>Chicken Fry Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹229</b></span>
+<span>2pc <b>₹389</b></span>
+<span>3pc <b>₹559</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse3.mm.bing.net/th/id/OIP.B2JdZwyOtccEtfACXgGYWgHaFN?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Chicken Broasted Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹239</b></span>
+<span>2pc <b>₹439</b></span>
+<span>3pc <b>₹599</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/HXIR4Yu5ZJ8/hqdefault.jpg">
+<div class="info">
+<h4>Chicken Drumstick Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹249</b></span>
+<span>2pc <b>₹479</b></span>
+<span>3pc <b>₹659</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://foodiesonly.in/_next/image?url=https:%2F%2Fs7ap1.scene7.com%2Fis%2Fimage%2Fitcportalprod%2FChicken%20mandi%20desktop%20images%3Ffmt%3Dwebp&w=1080&q=60">
+<div class="info">
+<h4>Chicken Juicy Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹259</b></span>
+<span>2pc <b>₹499</b></span>
+<span>3pc <b>₹699</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://www.m3mandi.com/wp-content/uploads/2023/08/Chicken_ghee_roast_mandi_.jpeg">
+<div class="info">
+<h4>Chicken Ghee Roast Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹259</b></span>
+<span>2pc <b>₹499</b></span>
+<span>3pc <b>₹699</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://www.recipesaresimple.com/wp-content/uploads/2021/01/Chicken-Al-Faham-Mandi-r.jpg">
+<div class="info">
+<h4>Chicken Alfaham Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹269</b></span>
+<span>2pc <b>₹529</b></span>
+<span>3pc <b>₹729</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/qz6orUcwb-Y/maxresdefault.jpg">
+<div class="info">
+<h4>Chicken Barbeque Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹269</b></span>
+<span>2pc <b>₹529</b></span>
+<span>3pc <b>₹729</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse1.mm.bing.net/th/id/OIP.nHLP5PiTgOTn4Lc2l-nfRgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Spl.Handi Mandi</h4>
+<div class="price-box">
+<span>2pc <b>₹399</b></span>
+<span>3pc <b>₹599</b></span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="category">
+
+<h3>Mutton Mandi</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://arabianmandi.com/wp-content/uploads/2024/03/Mutton-fry-kabsa-2.png">
+<div class="info">
+<h4>Mutton Fry Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹299</b></span>
+<span>2pc <b>₹549</b></span>
+<span>3pc <b>₹749</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse1.mm.bing.net/th/id/OIP.IzsrBFH9U75VAEBnZgGoiQHaFN?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Mutton Juicy Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹329</b></span>
+<span>2pc <b>₹599</b></span>
+<span>3pc <b>₹799</b></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://www.shutterstock.com/image-photo/authentic-mutton-mandi-leg-roast-600w-2091068875.jpg">
+<div class="info">
+<h4>Mutton Ghee Roast Mandi</h4>
+<div class="price-box">
+<span>1pc <b>₹329</b></span>
+<span>2pc <b>₹599</b></span>
+<span>3pc <b>₹799</b></span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="category">
+
+<h3>Sea Food Mandi</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/c9M5lymkaMI/maxresdefault.jpg">
+<div class="info">
+<h4>Fish Fry Mandi</h4>
+
+<div class="price-box">
+<span>1pc <b>₹279</b></span>
+<span>2pc <b>₹549</b></span>
+<span>3pc <b>₹749</b></span>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/m_IBLR6nZ4g/maxresdefault.jpg">
+<div class="info">
+<h4>Prawns Mandi</h4>
+
+<div class="price-box">
+<span>1pc <b>₹279</b></span>
+<span>2pc <b>₹549</b></span>
+<span>3pc <b>₹749</b></span>
+
+</div>
+
+</div>
+</div>
+<div class="category">
+
+<h3>Our Place Special</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+
+<div class="info">
+
+<h4>OUR PLACE SPECIAL MANDI</h4>
+
+<p style="color:#ff9800;font-weight:600;margin-bottom:8px;">₹1599</p>
+
+<ul class="special-list">
+<li>Chicken Fry</li>
+<li>Broasted</li>
+<li>Juicy</li>
+<li>Ghee Roast</li>
+<li>Drumstick</li>
+<li>Chicken Tikka</li>
+<li>Includes Drinks</li>
+</ul>
+
+<p class="serve">Serves 8 People</p>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="category">
+
+<h3>Extras</h3>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141">
+<div class="info">
+<h4>Extra Salad</h4>
+<p class="price">₹25</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://thumbs.dreamstime.com/z/close-up-bowl-mayonnaise-ingredients-34628209.jpg">
+<div class="info">
+<h4>Extra Mayonnaise</h4>
+<p class="price">₹25</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse1.mm.bing.net/th/id/OIP.05gCkcA9k0qvjvwOvUseZQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Extra Dry Fruit</h4>
+<p class="price">₹30</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse3.mm.bing.net/th/id/OIP.nb6D-hWlSeIkhdrR1Wif7AHaFL?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Extra Biryani Rice</h4>
+<p class="price">₹79</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/CvhcUJMlLAc/maxresdefault.jpg">
+<div class="info">
+<h4>Extra Mandi Rice</h4>
+<p class="price">₹129</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/IO8P4pFyAaE/maxresdefault.jpg">
+<div class="info">
+<h4>Extra Chicken Piece</h4>
+<p class="price">₹99</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse3.mm.bing.net/th/id/OIP.L4N-hGMbRSzHyzkJt7T-4QHaE7?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Extra Broasted Piece</h4>
+<p class="price">₹119</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://tse4.mm.bing.net/th/id/OIP.9yEnlD22r1t94cSt1QI82gHaE8?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="info">
+<h4>Extra Ghee Roast</h4>
+<p class="price">₹139</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.pinimg.com/originals/ed/ce/49/edce4906227aa80427764b68c93ca5ee.jpg">
+<div class="info">
+<h4>Extra Juicy Piece</h4>
+<p class="price">₹139</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://kitchenofdebjani.com/wp-content/uploads/2022/11/The-Ultimate-Whole-Mutton-Leg-Roast-recipe-debjanir-rannaghar-1024x684.jpg">
+<div class="info">
+<h4>Extra Mutton Piece</h4>
+<p class="price">₹179</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/FOOD_CATALOG/IMAGES/CMS/2024/7/17/e9237e19-7ae1-415a-a4cf-25e15c350ffe_2315f46a-933a-4f4d-8f4b-144f0a720738.JPG">
+<div class="info">
+<h4>Extra Mutton Juicy</h4>
+<p class="price">₹199</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://ae.freshtohome.com/blog/wp-content/uploads/2024/06/Screenshot-2024-06-27-161207.png">
+<div class="info">
+<h4>Mutton Ghee Roast</h4>
+<p class="price">₹199</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+<div class="location">
+St. Peter's College Road, Near Vivekananda Statue<br>
+Maisammaguda, Dulapally, Hyderabad<br>
+Phone: 8886222559
+</div>
+
+<footer>
+© 2026 OUR PLACE MANDI & RESTAURANT
+</footer>
+
+<script>
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function changeSlide(){
+
+slides[index].classList.remove("active");
+
+index++;
+
+if(index >= slides.length){
+index = 0;
+}
+
+slides[index].classList.add("active");
+
+}
+
+setInterval(changeSlide,4000);
+
+let searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+
+let value = this.value.toLowerCase();
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
